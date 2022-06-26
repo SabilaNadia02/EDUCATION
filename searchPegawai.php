@@ -58,9 +58,9 @@
                 <nav class="navbar navbar-light">
                     <div class="container-fluid">
                         <h1>CRUD Pegawai</h1>
-                        <form action="searchPegawai.php" class="d-flex" method="get">
-                            <input class="form-control ml-5" type="text" placeholder="Search" name="caripegawai" aria-label="Search" style="width: 300px; border-radius:50px">
-                            <button class="btn btn-info mx-1" type="submit" style="border-radius:50px" name="cari">Search</button>
+                        <form action="#" class="d-flex">
+                            <input class="form-control ml-5" type="search" placeholder="Search" aria-label="Search" style="width: 300px; border-radius:50px">
+                            <button class="btn btn-info mx-1" type="submit" style="border-radius:50px">Search</button>
                         </form>
                         <form action="tambahPegawai.html">
                             <button class="btn btn-success mr-1" type="submit" style="width: 200px; border-radius:50px">Tambah Pegawai</button>
@@ -82,9 +82,10 @@
                     </thead>
                     <tbody>
                         <?php
+                        $nama = $_GET["caripegawai"];
                         include "myconnection.php";
 
-                        $query = "SELECT * FROM pegawai";
+                        $query = "SELECT * FROM pegawai WHERE Nama LIKE '%$nama%'";
                         $result = mysqli_query($connect, $query);
                         $indeks = 0;
 

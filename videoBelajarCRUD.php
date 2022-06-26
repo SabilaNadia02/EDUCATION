@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
 </head>
 
-<body class="bg-light d-flex flex-column align-items-stretch" style="min-height:100vh;">
+<body class="bg-light d-flex flex-column align-items-stretch" style="min-height:100vh ;">
     <!-- HEADER -->
     <nav class="navbar" style="background-color: #EB8947;">
         <div class="container-fluid">
@@ -41,29 +41,27 @@
 
         <ul class="nav nav-tabs" id="myTab" role="tablist">
             <li class="nav-item px-3" role="presentation">
-                <a class="nav-link active" id="home-tab" data-toggle="tab" href="pegawaiCRUD.php" role="tab" aria-controls="home" aria-selected="true" style="border-top-left-radius:10px; border-top-right-radius:10px; color:black;">Pegawai</a>
+                <a class="nav-link" id="home-tab" data-toggle="tab" href="pegawaiCRUD.php" role="tab" aria-controls="home" aria-selected="true" style="border-top-left-radius:10px; border-top-right-radius:10px; color:black;">Pegawai</a>
             </li>
             <li class="nav-item px-3" role="presentation">
                 <a class="nav-link" id="profile-tab" data-toggle="tab" href="paketBelajarCRUD.php" role="tab" aria-controls="profile" aria-selected="false" style="border-top-left-radius:10px; border-top-right-radius:10px; color:black;">Paket Belajar</a>
             </li>
             <li class="nav-item px-3" role="presentation">
-                <a class="nav-link" id="contact-tab" data-toggle="tab" href="videoBelajarCRUD.php" role="tab" aria-controls="contact" aria-selected="false" style="border-top-left-radius:10px; border-top-right-radius:10px; color:black;">Video Pembelajaran</a>
+                <a class="nav-link active" id="contact-tab" data-toggle="tab" href="videoBelajarCRUD.php" role="tab" aria-controls="contact" aria-selected="false" style="border-top-left-radius:10px; border-top-right-radius:10px; color:black;">Video Pembelajaran</a>
             </li>
             <li class="nav-item px-3" role="presentation">
                 <a class="nav-link" id="contact-tab" data-toggle="tab" href="artikelCRUD.php" role="tab" aria-controls="contact" aria-selected="false" style="border-top-left-radius:10px; border-top-right-radius:10px; color:black;">Artikel</a>
             </li>
         </ul>
         <div class="tab-content p-2" id="myTabContent" style="background-color:#ffffff ;">
-            <div class="tab-pane fade show active" id="pegawaiCRUD" role="tabpanel" aria-labelledby="home-tab">
+            <div class="tab-pane fade" id="pegawaiCRUD" role="tabpanel" aria-labelledby="home-tab">
                 <nav class="navbar navbar-light">
                     <div class="container-fluid">
                         <h1>CRUD Pegawai</h1>
-                        <form action="searchPegawai.php" class="d-flex" method="get">
-                            <input class="form-control ml-5" type="text" placeholder="Search" name="caripegawai" aria-label="Search" style="width: 300px; border-radius:50px">
-                            <button class="btn btn-info mx-1" type="submit" style="border-radius:50px" name="cari">Search</button>
-                        </form>
-                        <form action="tambahPegawai.html">
-                            <button class="btn btn-success mr-1" type="submit" style="width: 200px; border-radius:50px">Tambah Pegawai</button>
+                        <form class="d-flex">
+                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" style="border-radius:50px">
+                            <button class="btn btn-info mx-1" type="submit" style="border-radius:50px">Search</button>
+                            <button class="btn btn-success mr-1" type="submit" style="width: 300px; border-radius:50px">Tambah Pegawai</button>
                         </form>
                     </div>
                     <hr>
@@ -100,11 +98,11 @@
                                     <td><?php echo $row["Posisi"]; ?></td>
                                     <td><?php echo $row["Gaji"]; ?></td>
                                     <td>
-                                        <a href="detailPegawai.php?IdPegawai=<?php echo $row["IdPegawai"]; ?>">
+                                        <a href="detailpegawai.php?id_buku=<?php echo $row["IdPegawai"]; ?>">
                                             <button class="btn btn-info mx-1 ml-3" style="border-radius:50px">Detail</button></a>
-                                        <a href="editPegawai.php?IdPegawai=<?php echo $row["IdPegawai"]; ?>">
+                                        <a href="editpegawai.php?id_buku=<?php echo $row["IdPegawai"]; ?>">
                                             <button class="btn btn-warning mx-1" style="border-radius:50px">Edit</button></a>
-                                        <a href="deletePegawai.php?IdPegawai=<?php echo $row["IdPegawai"]; ?>">
+                                        <a href="deletepegawi.php?id_buku=<?php echo $row["IdPegawai"]; ?>">
                                             <button class="btn btn-danger mx-1" style="border-radius:50px">Hapus</button></a>
                                     </td>
                                 </tr>
@@ -176,14 +174,16 @@
                     </tbody>
                 </table>
             </div>
-            <div class="tab-pane fade" id="videoBelajarCRUD" role="tabpanel" aria-labelledby="contact-tab">
+            <div class="tab-pane fade show active" id="videoBelajarCRUD" role="tabpanel" aria-labelledby="contact-tab">
                 <nav class="navbar navbar-light">
                     <div class="container-fluid">
                         <h2>CRUD Video Pembelajaran</h2>
-                        <form class="d-flex">
-                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" style="border-radius:50px">
+                        <form action="#" class="d-flex">
+                            <input class="form-control ml-5" type="search" placeholder="Search" aria-label="Search" style="width: 300px; border-radius:50px">
                             <button class="btn btn-info mx-1" type="submit" style="border-radius:50px">Search</button>
-                            <button class="btn btn-success mr-1" type="submit" style="width: 300px; border-radius:50px">Tambah Pegawai</button>
+                        </form>
+                        <form action="tambahPegawai.html">
+                            <button class="btn btn-success mr-1" type="submit" style="width: 200px; border-radius:50px">Tambah Video</button>
                         </form>
                     </div>
                     <hr>
