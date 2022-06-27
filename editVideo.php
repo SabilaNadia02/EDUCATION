@@ -39,9 +39,9 @@
         <?php
         include "myconnection.php";
 
-        $id = $_GET["IdPegawai"];
+        $id = $_GET["KodeVideo"];
 
-        $query = "SELECT * FROM pegawai WHERE IdPegawai='$id'";
+        $query = "SELECT * FROM video_pembelajaran WHERE KodeVideo='$id'";
         $result = mysqli_query($connect, $query);
 
         if (mysqli_num_rows($result) > 0) {
@@ -52,32 +52,28 @@
                     SELAMAT DATANG ADMINISTRATOR
                 </h3>
 
-                <form action="editPegawaiProses.php" method="get">
+                <form action="editVideoProses.php" method="get">
                     <div class="form-group">
-                        <label for="IdPegawai">ID Pegawai</label>
-                        <input type="text" class="form-control" value="<?php echo $row['IdPegawai']; ?>" name="IdPegawai" readonly aria-describedby="pegawai">
+                        <label for="KodeVideo">Kode Video Pembelajaran</label>
+                        <input type="text" class="form-control" value="<?php echo $row['KodeVideo']; ?>" name="KodeVideo" readonly aria-describedby="VideoPembelajaran">
                     </div>
                     <div class="form-group">
-                        <label for="NamaPegawai">Nama Lengkap Pegawai</label>
-                        <input type="text" class="form-control" value="<?php echo $row['Nama']; ?>" name="Nama" aria-describedby="pegawai">
+                        <label for="Kode_Paket">Kode Paket Belajar</label>
+                        <input type="text" class="form-control" value="<?php echo $row['Kode_Paket']; ?>" name="Kode_Paket" aria-describedby="VideoPembelajaran">
                     </div>
                     <div class="form-group">
-                        <label for="Alamat">Alamat Pegawai</label>
-                        <input type="text" class="form-control" value="<?php echo $row['Alamat']; ?>" name="Alamat" aria-describedby="pegawai">
+                        <label for="Judul">Judul Video</label>
+                        <input type="text" class="form-control" value="<?php echo $row['Judul']; ?>" name="Judul" aria-describedby="VideoPembelajaran">
                     </div>
                     <div class="form-group">
-                        <label for="NoHp">Nomor Hp Pegawai</label>
-                        <input type="text" class="form-control" value="<?php echo $row['NoHp']; ?>" name="NoHp" aria-describedby="pegawai">
+                        <label for="Video">Link Video</label>
+                        <input type="text" class="form-control" value="<?php echo $row['Video']; ?>" name="Video" aria-describedby="VideoPembelajaran">
                     </div>
                     <div class="form-group">
-                        <label for="Posisi">Posisi</label>
-                        <input type="text" class="form-control" value="<?php echo $row['Posisi']; ?>" name="Posisi" aria-describedby="pegawai">
+                        <label for="Rangkuman">Rangkuman Materi</label>
+                        <input type="text" class="form-control" value="<?php echo $row['Rangkuman']; ?>" name="Rangkuman" aria-describedby="VideoPembelajaran">
                     </div>
-                    <div class="form-group">
-                        <label for="Gaji">Gaji</label>
-                        <input type="text" class="form-control" value="<?php echo $row['Gaji']; ?>" name="Gaji" aria-describedby="pegawai">
-                    </div>
-                    <a href="pegawaiCRUD.php"><button type="button" class="btn btn-danger mx-1" style="border-radius:50px">BACK</button></a>
+                    <a href="videoBelajarCRUD.php"><button type="button" class="btn btn-danger mx-1" style="border-radius:50px">BACK</button></a>
                     <button type="submit" class="btn btn-primary" style="border-radius:50px">Submit</button>
                 </form>
         <?php

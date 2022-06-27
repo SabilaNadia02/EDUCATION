@@ -38,9 +38,9 @@
         <?php
         include "myconnection.php";
 
-        $id = $_GET["IdPegawai"];
+        $id = $_GET["KodeVideo"];
 
-        $query = "SELECT * FROM pegawai WHERE IdPegawai='$id'";
+        $query = "SELECT * FROM video_pembelajaran WHERE KodeVideo='$id'";
         $result = mysqli_query($connect, $query);
 
         if (mysqli_num_rows($result) > 0) {
@@ -48,44 +48,48 @@
         ?>
 
                 <h3 class="p-4 py-5 mb-0">
-                    Detail Data Pegawai <?php echo $row["Nama"]; ?>
+                    Detail Data Video Pembelajaran <?php echo $row["KodeVideo"]; ?>
                 </h3>
                 <div>
                     <table class="mx-5">
                         <tr>
-                            <td class="pb-3">ID Pegawai</td>
-                            <td class="pl-5"> : <?php echo $row["IdPegawai"]; ?></td>
+                            <td class="pb-3">Kode Video Pembelajaran</td>
+                            <td class="pl-5"> : <?php echo $row["KodeVideo"]; ?></td>
                         </tr>
                         <tr>
-                            <td class="pb-3">Nama Pegawai</td>
-                            <td class="pl-5"> : <?php echo $row["Nama"]; ?></td>
+                            <td class="pb-3">Kode Paket Belajar</td>
+                            <td class="pl-5"> : <?php echo $row["Kode_Paket"]; ?></td>
                         </tr>
                         <tr>
-                            <td class="pb-3">Alamat Pegawai</td>
-                            <td class="pl-5"> : <?php echo $row["Alamat"]; ?></td>
+                            <td class="pb-3">Judul Video</td>
+                            <td class="pl-5"> : <?php echo $row["Judul"]; ?></td>
                         </tr>
                         <tr>
-                            <td class="pb-3">Nomor Hp</td>
-                            <td class="pl-5"> : <?php echo $row["NoHp"]; ?></td>
+                            <td class="pb-3">Link Video</td>
+                            <td class="pl-5"> : <a href="<?php echo $row["Video"]; ?>"><?php echo $row["Video"]; ?></a></td>
                         </tr>
                         <tr>
-                            <td class="pb-3">Posisi</td>
-                            <td class="pl-5"> : <?php echo $row["Posisi"]; ?></td>
+                            <td class="pb-3"></td>
+                            <td class="pl-5">
+                                <div class="embed-responsive embed-responsive-16by9">
+                                    <iframe class="embed-responsive-item" src="<?php echo $row["Video"]; ?>" allowfullscreen></iframe>
+                                </div>
+                            </td>
                         </tr>
                         <tr>
-                            <td class="pb-3">Gaji</td>
-                            <td class="pl-5"> : <?php echo $row["Gaji"]; ?></td>
+                            <td class="pb-3">Rangkuman</td>
+                            <td class="pl-5"> : <?php echo $row["Rangkuman"]; ?></td>
                         </tr>
                         <tr>
-                            <td>                                
+                            <td>
                                 <?php
                                 if (isset($_SESSION["username"])) {
                                 ?>
-                                    <a href="pegawaiCRUD.php"><button class="btn btn-danger mx-1" style="border-radius:50px">BACK</button></a>
+                                    <a href="videoBelajarCRUD.php"><button class="btn btn-danger mx-1" style="border-radius:50px">BACK</button></a>
                                 <?php
                                 } else {
                                 ?>
-                                    <a href="pegawaiCRUD.php"><button class="btn btn-danger mx-1" style="border-radius:50px">BACK</button></a>
+                                    <a href="videoBelajarCRUD.php"><button class="btn btn-danger mx-1" style="border-radius:50px">BACK</button></a>
                                 <?php
                                 }
                                 ?>

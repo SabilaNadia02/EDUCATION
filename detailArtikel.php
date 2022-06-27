@@ -38,9 +38,9 @@
         <?php
         include "myconnection.php";
 
-        $id = $_GET["IdPegawai"];
+        $id = $_GET["NoArtikel"];
 
-        $query = "SELECT * FROM pegawai WHERE IdPegawai='$id'";
+        $query = "SELECT * FROM artikel WHERE NoArtikel='$id'";
         $result = mysqli_query($connect, $query);
 
         if (mysqli_num_rows($result) > 0) {
@@ -48,44 +48,36 @@
         ?>
 
                 <h3 class="p-4 py-5 mb-0">
-                    Detail Data Pegawai <?php echo $row["Nama"]; ?>
+                    Detail Data Artikel <?php echo $row["NoArtikel"]; ?>
                 </h3>
                 <div>
                     <table class="mx-5">
                         <tr>
-                            <td class="pb-3">ID Pegawai</td>
-                            <td class="pl-5"> : <?php echo $row["IdPegawai"]; ?></td>
+                            <td class="pb-3">Judul Artikel</td>
+                            <td class="pl-5"> : <?php echo $row["Judul"]; ?></td>
                         </tr>
                         <tr>
-                            <td class="pb-3">Nama Pegawai</td>
-                            <td class="pl-5"> : <?php echo $row["Nama"]; ?></td>
+                            <td class="pb-3">Nama Penulis</td>
+                            <td class="pl-5"> : <?php echo $row["Penulis"]; ?></td>
                         </tr>
                         <tr>
-                            <td class="pb-3">Alamat Pegawai</td>
-                            <td class="pl-5"> : <?php echo $row["Alamat"]; ?></td>
+                            <td class="pb-3">Tanggal Publish</td>
+                            <td class="pl-5"> : <?php echo $row["Publish"]; ?></td>
                         </tr>
                         <tr>
-                            <td class="pb-3">Nomor Hp</td>
-                            <td class="pl-5"> : <?php echo $row["NoHp"]; ?></td>
-                        </tr>
-                        <tr>
-                            <td class="pb-3">Posisi</td>
-                            <td class="pl-5"> : <?php echo $row["Posisi"]; ?></td>
-                        </tr>
-                        <tr>
-                            <td class="pb-3">Gaji</td>
-                            <td class="pl-5"> : <?php echo $row["Gaji"]; ?></td>
+                            <td class="pb-3">Link Artikel</td>
+                            <td class="pl-5"> : <?php echo $row["Link"]; ?></td>
                         </tr>
                         <tr>
                             <td>                                
                                 <?php
                                 if (isset($_SESSION["username"])) {
                                 ?>
-                                    <a href="pegawaiCRUD.php"><button class="btn btn-danger mx-1" style="border-radius:50px">BACK</button></a>
+                                    <a href="artikelCRUD.php"><button class="btn btn-danger mx-1" style="border-radius:50px">BACK</button></a>
                                 <?php
                                 } else {
                                 ?>
-                                    <a href="pegawaiCRUD.php"><button class="btn btn-danger mx-1" style="border-radius:50px">BACK</button></a>
+                                    <a href="artikelCRUD.php"><button class="btn btn-danger mx-1" style="border-radius:50px">BACK</button></a>
                                 <?php
                                 }
                                 ?>

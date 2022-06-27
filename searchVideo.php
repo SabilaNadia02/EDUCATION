@@ -202,8 +202,9 @@
                     <tbody style="text-align:center;">
                         <?php
                         include "myconnection.php";
+                        $nama = $_GET["cariVideo"];
 
-                        $query = "SELECT * FROM video_pembelajaran";
+                        $query = "SELECT * FROM video_pembelajaran WHERE Judul LIKE'%$nama%'";
                         $result = mysqli_query($connect, $query);
                         $indeks = 0;
 
