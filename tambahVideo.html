@@ -39,32 +39,28 @@
             SELAMAT DATANG ADMINISTRATOR
         </h3>
 
-        <form action="insertPegawai.php" method="get">
+        <form action="insertVideo.php" method="get">
             <div class="form-group">
-                <label for="IdPegawai">ID Pegawai</label>
-                <input type="text" class="form-control" name="IdPegawai" aria-describedby="pegawai">
+                <label for="KodeVideo">Kode Video Pembelajaran</label>
+                <input type="text" class="form-control" name="KodeVideo" aria-describedby="KodePaket">
             </div>
             <div class="form-group">
-                <label for="NamaPegawai">Nama Lengkap Pegawai</label>
-                <input type="text" class="form-control" name="NamaPegawai" aria-describedby="pegawai">
+                <label for="Kode_Paket">Kode Paket Belajar</label>
+                <input type="text" class="form-control" name="Kode_Paket" aria-describedby="Kode_Paket">
             </div>
             <div class="form-group">
-                <label for="Alamat">Alamat Pegawai</label>
-                <input type="text" class="form-control" name="Alamat" aria-describedby="pegawai">
+                <label for="Judul">Judul Video Pembelajaran</label>
+                <input type="text" class="form-control" name="Judul" aria-describedby="Judul">
             </div>
             <div class="form-group">
-                <label for="NoHp">Nomor Hp Pegawai</label>
-                <input type="text" class="form-control" name="NoHp" aria-describedby="pegawai">
+                <label for="Video">link Video Pembelajaran (embed)</label>
+                <input type="text" class="form-control" name="Video" aria-describedby="Video">
             </div>
             <div class="form-group">
-                <label for="Posisi">Posisi</label>
-                <input type="text" class="form-control" name="Posisi" aria-describedby="pegawai">
+                <label for="Rangkuman">Rangkuman Materi</label>
+                <input type="text" class="form-control" name="Rangkuman" aria-describedby="Rangkuman">
             </div>
-            <div class="form-group">
-                <label for="Gaji">Gaji</label>
-                <input type="text" class="form-control" name="Gaji" aria-describedby="pegawai">
-            </div>
-            <a href="pegawaiCRUD.php"><button type="button" class="btn btn-danger mx-1" style="border-radius:50px">BACK</button></a>
+            <a href="videoBelajarCRUD.php"><button type="button" class="btn btn-danger mx-1" style="border-radius:50px">BACK</button></a>
             <button type="submit" class="btn btn-primary" style="border-radius:50px">Submit</button>
         </form>
     </div>

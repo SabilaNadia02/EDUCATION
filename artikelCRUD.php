@@ -237,11 +237,11 @@
                 <nav class="navbar navbar-light">
                     <div class="container-fluid">
                         <h2>CRUD Artikel</h2>
-                        <form action="#" class="d-flex">
-                            <input class="form-control ml-5" type="search" placeholder="Search" aria-label="Search" style="width: 300px; border-radius:50px">
+                        <form action="searchArtikel.php" class="d-flex">
+                            <input class="form-control ml-5" type="search" placeholder="Search" name="cariArtikel" aria-label="Search" style="width: 300px; border-radius:50px">
                             <button class="btn btn-info mx-1" type="submit" style="border-radius:50px">Search</button>
                         </form>
-                        <form action="tambahPegawai.html">
+                        <form action="tambahArtikel.html">
                             <button class="btn btn-success mr-1" type="submit" style="width: 200px; border-radius:50px">Tambah Artikel</button>
                         </form>
                     </div>
@@ -275,11 +275,11 @@
                                     <td><?php echo $row["Penulis"]; ?></td>
                                     <td><?php echo $row["Publish"]; ?></td>
                                     <td>
-                                        <a href="detailpegawai.php?id_buku=<?php echo $row["NoArtikel"]; ?>">
+                                        <a href="detailArtikel.php?NoArtikel=<?php echo $row["NoArtikel"]; ?>">
                                             <button class="btn btn-info mx-1 ml-3" style="border-radius:50px">Detail</button></a>
-                                        <a href="editpegawai.php?id_buku=<?php echo $row["NoArtikel"]; ?>">
+                                        <a href="editArtikel.php?NoArtikel=<?php echo $row["NoArtikel"]; ?>">
                                             <button class="btn btn-warning mx-1" style="border-radius:50px">Edit</button></a>
-                                        <a href="deletepegawi.php?id_buku=<?php echo $row["NoArtikel"]; ?>">
+                                        <a href="deleteArtikel.php?NoArtikel=<?php echo $row["NoArtikel"]; ?>">
                                             <button class="btn btn-danger mx-1" style="border-radius:50px">Hapus</button></a>
                                     </td>
                                 </tr>

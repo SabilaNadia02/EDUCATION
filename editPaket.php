@@ -39,9 +39,9 @@
         <?php
         include "myconnection.php";
 
-        $id = $_GET["IdPegawai"];
+        $id = $_GET["KodePaket"];
 
-        $query = "SELECT * FROM pegawai WHERE IdPegawai='$id'";
+        $query = "SELECT * FROM paket_Belajar WHERE KodePaket='$id'";
         $result = mysqli_query($connect, $query);
 
         if (mysqli_num_rows($result) > 0) {
@@ -52,32 +52,24 @@
                     SELAMAT DATANG ADMINISTRATOR
                 </h3>
 
-                <form action="editPegawaiProses.php" method="get">
+                <form action="editPaketProses.php" method="get">
                     <div class="form-group">
-                        <label for="IdPegawai">ID Pegawai</label>
-                        <input type="text" class="form-control" value="<?php echo $row['IdPegawai']; ?>" name="IdPegawai" readonly aria-describedby="pegawai">
+                        <label for="KodePaket">Kode Paket Belajar</label>
+                        <input type="text" class="form-control" value="<?php echo $row['KodePaket']; ?>" name="KodePaket" readonly aria-describedby="paketBelajar">
                     </div>
                     <div class="form-group">
-                        <label for="NamaPegawai">Nama Lengkap Pegawai</label>
-                        <input type="text" class="form-control" value="<?php echo $row['Nama']; ?>" name="Nama" aria-describedby="pegawai">
+                        <label for="NamaPegawai">Nama Paket Belajar</label>
+                        <input type="text" class="form-control" value="<?php echo $row['Nama']; ?>" name="Nama" aria-describedby="paketBelajar">
                     </div>
                     <div class="form-group">
-                        <label for="Alamat">Alamat Pegawai</label>
-                        <input type="text" class="form-control" value="<?php echo $row['Alamat']; ?>" name="Alamat" aria-describedby="pegawai">
+                        <label for="Alamat">Benefit yang Didapatkan</label>
+                        <input type="text" class="form-control" value="<?php echo $row['Benefit']; ?>" name="Benefit" aria-describedby="paketBelajar">
                     </div>
                     <div class="form-group">
-                        <label for="NoHp">Nomor Hp Pegawai</label>
-                        <input type="text" class="form-control" value="<?php echo $row['NoHp']; ?>" name="NoHp" aria-describedby="pegawai">
+                        <label for="NoHp">Harga Paket Belajar</label>
+                        <input type="text" class="form-control" value="<?php echo $row['Harga']; ?>" name="Harga" aria-describedby="paketBelajar">
                     </div>
-                    <div class="form-group">
-                        <label for="Posisi">Posisi</label>
-                        <input type="text" class="form-control" value="<?php echo $row['Posisi']; ?>" name="Posisi" aria-describedby="pegawai">
-                    </div>
-                    <div class="form-group">
-                        <label for="Gaji">Gaji</label>
-                        <input type="text" class="form-control" value="<?php echo $row['Gaji']; ?>" name="Gaji" aria-describedby="pegawai">
-                    </div>
-                    <a href="pegawaiCRUD.php"><button type="button" class="btn btn-danger mx-1" style="border-radius:50px">BACK</button></a>
+                    <a href="paketBelajarCRUD.php"><button type="button" class="btn btn-danger mx-1" style="border-radius:50px">BACK</button></a>
                     <button type="submit" class="btn btn-primary" style="border-radius:50px">Submit</button>
                 </form>
         <?php

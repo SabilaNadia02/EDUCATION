@@ -38,9 +38,9 @@
         <?php
         include "myconnection.php";
 
-        $id = $_GET["IdPegawai"];
+        $id = $_GET["KodePaket"];
 
-        $query = "SELECT * FROM pegawai WHERE IdPegawai='$id'";
+        $query = "SELECT * FROM paket_belajar WHERE KodePaket='$id'";
         $result = mysqli_query($connect, $query);
 
         if (mysqli_num_rows($result) > 0) {
@@ -48,44 +48,36 @@
         ?>
 
                 <h3 class="p-4 py-5 mb-0">
-                    Detail Data Pegawai <?php echo $row["Nama"]; ?>
+                    Detail Data Paket Belajar <?php echo $row["Nama"]; ?>
                 </h3>
                 <div>
                     <table class="mx-5">
                         <tr>
-                            <td class="pb-3">ID Pegawai</td>
-                            <td class="pl-5"> : <?php echo $row["IdPegawai"]; ?></td>
+                            <td class="pb-3">Kode Paket Belajar</td>
+                            <td class="pl-5"> : <?php echo $row["KodePaket"]; ?></td>
                         </tr>
                         <tr>
-                            <td class="pb-3">Nama Pegawai</td>
+                            <td class="pb-3">Nama Paket Belajar</td>
                             <td class="pl-5"> : <?php echo $row["Nama"]; ?></td>
                         </tr>
                         <tr>
-                            <td class="pb-3">Alamat Pegawai</td>
-                            <td class="pl-5"> : <?php echo $row["Alamat"]; ?></td>
+                            <td class="pb-3">Benefit yang Didapatkan</td>
+                            <td class="pl-5"> : <?php echo $row["Benefit"]; ?></td>
                         </tr>
                         <tr>
-                            <td class="pb-3">Nomor Hp</td>
-                            <td class="pl-5"> : <?php echo $row["NoHp"]; ?></td>
-                        </tr>
-                        <tr>
-                            <td class="pb-3">Posisi</td>
-                            <td class="pl-5"> : <?php echo $row["Posisi"]; ?></td>
-                        </tr>
-                        <tr>
-                            <td class="pb-3">Gaji</td>
-                            <td class="pl-5"> : <?php echo $row["Gaji"]; ?></td>
+                            <td class="pb-3">Harga Paket Belajar</td>
+                            <td class="pl-5"> : <?php echo $row["Harga"]; ?></td>
                         </tr>
                         <tr>
                             <td>                                
                                 <?php
                                 if (isset($_SESSION["username"])) {
                                 ?>
-                                    <a href="pegawaiCRUD.php"><button class="btn btn-danger mx-1" style="border-radius:50px">BACK</button></a>
+                                    <a href="paketBelajarCRUD.php"><button class="btn btn-danger mx-1" style="border-radius:50px">BACK</button></a>
                                 <?php
                                 } else {
                                 ?>
-                                    <a href="pegawaiCRUD.php"><button class="btn btn-danger mx-1" style="border-radius:50px">BACK</button></a>
+                                    <a href="paketBelajarCRUD.php"><button class="btn btn-danger mx-1" style="border-radius:50px">BACK</button></a>
                                 <?php
                                 }
                                 ?>

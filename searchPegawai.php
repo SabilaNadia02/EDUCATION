@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>CRUD Paket Belajar</title>
+    <title>CRUD Pegawai</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
 </head>
 
@@ -82,8 +82,8 @@
                     </thead>
                     <tbody>
                         <?php
-                        $nama = $_GET["caripegawai"];
                         include "myconnection.php";
+                        $nama = $_GET["caripegawai"];
 
                         $query = "SELECT * FROM pegawai WHERE Nama LIKE '%$nama%'";
                         $result = mysqli_query($connect, $query);

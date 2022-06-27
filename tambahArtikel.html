@@ -39,32 +39,24 @@
             SELAMAT DATANG ADMINISTRATOR
         </h3>
 
-        <form action="insertPegawai.php" method="get">
+        <form action="insertArtikel.php" method="get">
             <div class="form-group">
-                <label for="IdPegawai">ID Pegawai</label>
-                <input type="text" class="form-control" name="IdPegawai" aria-describedby="pegawai">
+                <label for="Judul">Judul Artikel</label>
+                <input type="text" class="form-control" name="Judul" aria-describedby="Judul">
             </div>
             <div class="form-group">
-                <label for="NamaPegawai">Nama Lengkap Pegawai</label>
-                <input type="text" class="form-control" name="NamaPegawai" aria-describedby="pegawai">
+                <label for="Penulis">Penulis Artikel</label>
+                <input type="text" class="form-control" name="Penulis" aria-describedby="Penulis">
             </div>
             <div class="form-group">
-                <label for="Alamat">Alamat Pegawai</label>
-                <input type="text" class="form-control" name="Alamat" aria-describedby="pegawai">
+                <label for="Publish">Tanggal Publish (yyyy/mm/dd)</label>
+                <input type="text" class="form-control" name="Publish" aria-describedby="Publish">
             </div>
             <div class="form-group">
-                <label for="NoHp">Nomor Hp Pegawai</label>
-                <input type="text" class="form-control" name="NoHp" aria-describedby="pegawai">
+                <label for="Link">link Artikel</label>
+                <input type="text" class="form-control" name="Link" aria-describedby="Link">
             </div>
-            <div class="form-group">
-                <label for="Posisi">Posisi</label>
-                <input type="text" class="form-control" name="Posisi" aria-describedby="pegawai">
-            </div>
-            <div class="form-group">
-                <label for="Gaji">Gaji</label>
-                <input type="text" class="form-control" name="Gaji" aria-describedby="pegawai">
-            </div>
-            <a href="pegawaiCRUD.php"><button type="button" class="btn btn-danger mx-1" style="border-radius:50px">BACK</button></a>
+            <a href="artikelCRUD.php"><button type="button" class="btn btn-danger mx-1" style="border-radius:50px">BACK</button></a>
             <button type="submit" class="btn btn-primary" style="border-radius:50px">Submit</button>
         </form>
     </div>
